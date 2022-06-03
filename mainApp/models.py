@@ -14,3 +14,7 @@ class task(models.Model):
     description = models.CharField(max_length=1000, blank=False, default=None)
     email = models.EmailField(blank=False, default=None)
 
+
+    class Meta:
+        unique_together = ["description", "email", "name"]
+
